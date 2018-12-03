@@ -1,7 +1,5 @@
 # skaffold-jib-demo
 
-**Please interrupt me if I go over 10 minutes.**
-
 ### [Skaffold](https://github.com/GoogleContainerTools/skaffold)?
 
 A command line tool that facilitates continuous development for Kubernetes applications.
