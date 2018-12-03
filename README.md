@@ -1,9 +1,9 @@
 # skaffold-jib-demo
 
-### Node.js backend
+### Node.js Backend
 Returns "Greetings from Node.js!"
 
-Dockerfile
+Uses Dockerfile.
 ```
 nodejs-backend/
 ├── Dockerfile
@@ -11,10 +11,10 @@ nodejs-backend/
 └── package.json
 ```
 
-### Groovy backend
+### Groovy Backend
 Returns "Greetings from Groovy!"
 
-Micronaut framework + Gradle + Jib
+Uses Micronaut framework + Gradle + Jib.
 ```
 groovy-backend/
 ├── build.gradle
@@ -24,8 +24,10 @@ groovy-backend/
         └── WebController.groovy
 ```
 
-### Java frontend
-Spark web framework + Maven + Jib
+### Java Frontend
+Accesses the two backends
+
+Uses Spark web framework + Maven + Jib.
 ```
 java-frontend/
 ├── pom.xml
@@ -34,7 +36,7 @@ java-frontend/
     └── resources/static/index.html
 ```
 
-### Kubernetes YAML files (deployments and services)
+### Kubernetes YAML Files (Deployments and Services)
 ```
 k8s/
 ├── nodejs-backend.yaml
@@ -42,7 +44,7 @@ k8s/
 └── java-frontend.yaml
 ```
 
-### Skaffold config
+### Skaffold Config
 ```
 skaffold.yaml
 ```
