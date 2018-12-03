@@ -39,6 +39,6 @@ spec:
     targetPort: 8080
   selector:
     run: java-frontend
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer: {}

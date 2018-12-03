@@ -19,6 +19,9 @@ generate() {
   rm service.yaml
 }
 
-generate java-frontend LoadBalancer 8080
+# LoadBalancer if you really want to get an accessible external IP.
+#generate java-frontend LoadBalancer 8080
+
+generate java-frontend ClusterIP 8080
 generate groovy-backend ClusterIP 8086
 generate nodejs-backend ClusterIP 3000
