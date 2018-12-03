@@ -57,7 +57,7 @@ skaffold.yaml
    - You need Dockerfile
    - You need Docker installed locally
 1. Run the container locally
-1. Deploy the built container to a regstiry
+1. Push the built container to a regstiry
 1. Deploy the container to the dev Kubernetes cluster
 1. Set up port forwarding
 1. Access `http://localhost:<port>`
