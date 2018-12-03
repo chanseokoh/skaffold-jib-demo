@@ -56,7 +56,7 @@ Maven and Gradle plugins to build container images for your Java applications.
 
 No need to use `kubectl`.
 
-- Setting up Skaffold for the whole project
+- Setting up Skaffold for the whole project:
 ```yaml
 apiVersion: skaffold/v1beta1
 kind: Config
@@ -74,7 +74,11 @@ build:
       '*.js': .
 ```
 
-### Node.js Backend
+### Demo App Structure
+
+Mono repo with 3 microservices written in different languages and frameworks.
+
+#### Node.js Backend
 Returns "Greetings from Node.js!"
 
 Uses Dockerfile.
@@ -85,7 +89,7 @@ nodejs-backend/
 └── package.json
 ```
 
-### Groovy Backend
+#### Groovy Backend
 Returns "Greetings from Groovy!"
 
 Uses Micronaut framework + Gradle + Jib.
@@ -98,8 +102,8 @@ groovy-backend/
         └── WebController.groovy
 ```
 
-### Java Frontend
-Accesses the two backends
+#### Java Frontend
+Accesses the two backends.
 
 Uses Spark web framework + Maven + Jib.
 ```
@@ -110,7 +114,9 @@ java-frontend/
     └── resources/static/index.html
 ```
 
-### Kubernetes YAML Files (Deployments and Services)
+#### Kubernetes YAML Files (Deployments and Services)
+
+The usual YAML files you will have for Kubernetes deployement:
 ```
 k8s/
 ├── nodejs-backend.yaml
@@ -118,7 +124,7 @@ k8s/
 └── java-frontend.yaml
 ```
 
-### Skaffold Config
+#### Skaffold Config
 ```
 skaffold.yaml
 ```
