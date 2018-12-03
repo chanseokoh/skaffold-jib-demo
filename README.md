@@ -97,6 +97,7 @@ skaffold.yaml
 
 No need to use `kubectl`.
 
+- Setting up Skaffold for the whole project
 ```yaml
 apiVersion: skaffold/v1beta1
 kind: Config
