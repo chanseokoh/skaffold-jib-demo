@@ -62,7 +62,7 @@ skaffold.yaml
 1. Set up port forwarding
 1. Access `http://localhost:<port>`
 
-### Dev Workflow with Jib but without Skaffold
+### Dev Workflow with Jib
 
 1. Change source files
 1. Rebuild the project
