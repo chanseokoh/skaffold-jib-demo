@@ -2,56 +2,15 @@
 
 **Please interrupt me if I go over 10 minutes.**
 
-### Node.js Backend
-Returns "Greetings from Node.js!"
+### [Skaffold](https://github.com/GoogleContainerTools/skaffold)?
 
-Uses Dockerfile.
-```
-nodejs-backend/
-├── Dockerfile
-├── index.js
-└── package.json
-```
+A command line tool that facilitates continuous development for Kubernetes applications.
 
-### Groovy Backend
-Returns "Greetings from Groovy!"
+### [Jib](https://github.com/GoogleContainerTools/jib)?
 
-Uses Micronaut framework + Gradle + Jib.
-```
-groovy-backend/
-├── build.gradle
-└── src/main/
-    └── groovy/backend/
-        ├── Application.groovy
-        └── WebController.groovy
-```
+Maven and Gradle plugins to build container images for your Java applications.
 
-### Java Frontend
-Accesses the two backends
-
-Uses Spark web framework + Maven + Jib.
-```
-java-frontend/
-├── pom.xml
-└── src/main
-    ├── java/frontend/Frontend.java
-    └── resources/static/index.html
-```
-
-### Kubernetes YAML Files (Deployments and Services)
-```
-k8s/
-├── nodejs-backend.yaml
-├── groovy-backend.yaml
-└── java-frontend.yaml
-```
-
-### Skaffold Config
-```
-skaffold.yaml
-```
-
-### Dev Workflow without Skaffold + Jib
+### Kubernetes Dev Workflow without Skaffold + Jib
 
 1. Change source files
 1. Rebuild the project
@@ -59,7 +18,7 @@ skaffold.yaml
    - You need Dockerfile
    - You need Docker installed locally
 1. Run the container locally
-1. Push the built container to a regstiry
+1. Push the built container to a registry
 1. Deploy the container to the dev Kubernetes cluster
 1. Set up port forwarding
 1. Access `http://localhost:<port>`
@@ -115,4 +74,53 @@ build:
     context: nodejs-backend
     sync:
       '*.js': .
+```
+
+### Node.js Backend
+Returns "Greetings from Node.js!"
+
+Uses Dockerfile.
+```
+nodejs-backend/
+├── Dockerfile
+├── index.js
+└── package.json
+```
+
+### Groovy Backend
+Returns "Greetings from Groovy!"
+
+Uses Micronaut framework + Gradle + Jib.
+```
+groovy-backend/
+├── build.gradle
+└── src/main/
+    └── groovy/backend/
+        ├── Application.groovy
+        └── WebController.groovy
+```
+
+### Java Frontend
+Accesses the two backends
+
+Uses Spark web framework + Maven + Jib.
+```
+java-frontend/
+├── pom.xml
+└── src/main
+    ├── java/frontend/Frontend.java
+    └── resources/static/index.html
+```
+
+### Kubernetes YAML Files (Deployments and Services)
+```
+k8s/
+├── nodejs-backend.yaml
+├── groovy-backend.yaml
+└── java-frontend.yaml
+```
+
+### Skaffold Config
+```
+skaffold.yaml
 ```
