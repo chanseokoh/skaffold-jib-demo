@@ -96,3 +96,20 @@ skaffold.yaml
 1. Access `http://localhost:<port>`
 
 No need to use `kubectl`.
+
+```yaml
+apiVersion: skaffold/v1beta1
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/chanseok-playground-new/java-frontend
+    jibMaven: {}
+    context: java-frontend
+  - image: gcr.io/chanseok-playground-new/groovy-backend
+    jibGradle: {}
+    context: groovy-backend
+  - image: gcr.io/chanseok-playground-new/nodejs-backend
+    context: nodejs-backend
+    sync:
+      '*.js': .
+```
