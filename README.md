@@ -1,5 +1,7 @@
 # skaffold-jib-demo
 
+**Please interrupt me if I go over 10 minutes.**
+
 ### Node.js Backend
 Returns "Greetings from Node.js!"
 
