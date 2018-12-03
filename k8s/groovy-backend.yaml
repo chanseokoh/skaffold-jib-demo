@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: groovy-backend
+  name: groovy-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: groovy-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: groovy-backend
+    spec:
+      containers:
+      - image: gcr.io/chanseok-playground-new/groovy-backend
+        name: groovy-backend
+        ports:
+        - containerPort: 8086
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: groovy-backend
+  name: groovy-backend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8086
+  selector:
+    run: groovy-backend
+  type: ClusterIP
+status:
+  loadBalancer: {}

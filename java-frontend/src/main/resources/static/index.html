@@ -1,0 +1,49 @@
+<style>
+  html, body {
+    height: 100%;
+    font-size: 20px;
+  }
+  input {
+    width: 100%;
+    font-size: 20px;
+    background: #E6D8AF;
+  }
+  td {
+    font-size: 20px;
+  }
+</style>
+
+This is the frontend.
+
+<table>
+<tr>
+  <td><input id="nodejs" class="button" type="button" value="Access Node.js Backend"/></td>
+  <td id="nodejs-res"/>
+</tr>
+<tr>
+  <td><input id="groovy" class="button" type="button" value="Access Groovy (Micronaut) Backend"/></td>
+  <td id="groovy-res"/>
+</tr>
+</table>
+
+<script>
+  document.querySelectorAll('.button').forEach((el) => el.addEventListener('click', (e) => {
+    var id = e.target.id;
+    var el = document.querySelector('#' + id);
+    var res_el = document.querySelector('#' + id + '-res');
+
+    const url = '/' + id;
+    res_el.textContent = 'Accessing ' + url + '...';
+
+    fetch(url).then((response) => {
+      console.log(response);
+      if (response.ok) {
+        return response.text();
+      } else {
+        alert('Error:' + response.statusText);
+      }
+    }).then((text) => {
+      res_el.textContent = text;
+    })
+  }));
+</script>

@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nodejs-backend
+  name: nodejs-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nodejs-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: nodejs-backend
+    spec:
+      containers:
+      - image: gcr.io/chanseok-playground-new/nodejs-backend
+        name: nodejs-backend
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nodejs-backend
+  name: nodejs-backend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    run: nodejs-backend
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: java-frontend
+  name: java-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: java-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: java-frontend
+    spec:
+      containers:
+      - image: gcr.io/chanseok-playground-new/java-frontend
+        name: java-frontend
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: java-frontend
+  name: java-frontend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: java-frontend
+  type: LoadBalancer
+status:
+  loadBalancer: {}
