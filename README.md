@@ -70,6 +70,26 @@ skaffold.yaml
 1. Set up port forwarding
 1. Access `http://localhost:<port>`
 
+- Setting up Jib for Gradle:
+```diff
+ plugins {
+   id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+   id 'com.github.johnrengelman.shadow' version '4.0.0'
++  id 'com.google.cloud.tools.jib' version '0.10.0'
+ }
+ ```
+
+- Setting up Jib for Maven:
+```diff
+     <plugins>
++      <plugin>
++        <groupId>com.google.cloud.tools</groupId>
++        <artifactId>jib-maven-plugin</artifactId>
++        <version>0.10.0</version>
++      </plugin>
+     </plugins>
+```
+
 ### Dev Workflow with Skaffold + Jib
 
 1. Change source files
