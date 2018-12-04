@@ -21,7 +21,7 @@ Maven and Gradle plugins to build container images for your Java applications.
 1. Set up port forwarding
 1. Access `http://localhost:<port>`
 
-### Dev Workflow with Jib
+### Dev Workflow with Jib (for Java)
 
 1. Change source files
 1. Rebuild the project
