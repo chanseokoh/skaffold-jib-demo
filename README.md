@@ -24,12 +24,12 @@ Maven and Gradle plugins to build container images for your Java applications.
 ### Dev Workflow with Jib
 
 1. Change source files
-1. Rebuild the project
-1. ~~Build a Docker container locally~~
-   - ~~You need Dockerfile~~
-   - ~~You need Docker installed locally~~
-1. ~~Run the container locally~~
-1. ~~Push the built container to a remote container registry~~
+1. Rebuild the project. These steps are now gone:
+   1. ~~Build a Docker container locally~~
+      - ~~You need Dockerfile~~
+      - ~~You need Docker installed locally~~
+   1. ~~Run the container locally~~
+   1. ~~Push the built container to a remote container registry~~
 1. Deploy the built container to the dev Kubernetes cluster
 1. Set up port forwarding
 1. Access `http://localhost:<port>`
